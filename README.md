@@ -214,18 +214,79 @@ ORDER BY TotalCompletedPaymentValue DESC;
 | Credit Card	 |					   478 |			Rp2.209.350.964,00 |
 | Bank Transfer	 |					   486 |			Rp2.197.920.937,00 |
 
+---
 
+### Returns Analysis
 
+``` sql
+-- Which products experience the highest return activity?
+SELECT TOP 10
+	p.ProductName,
+	SUM(r.Quantity) AS TotalQuantityReturned
+FROM dbo.Products AS p
+INNER JOIN dbo.Returns AS r
+ON p.ProductID = r.ProductID
+WHERE r.Status = 'Completed'
+GROUP BY
+	p.ProductID,
+	p.ProductName
+ORDER BY TotalQuantityReturned DESC;
+```
 
+| Product Name 		    | Total Quantity Returned |
+| --------------------- | ----------------------: |
+| Chef Knife Premium    |					    6 |
+| Sketchbook Plus	    |					    6 |
+| Pencil Case Standard  |					    6 |
+| Denim Jeans Premium   |					    5 |
+| Lip Balm Plus		    |					    5 |
+| Football Plus		    |					    5 |
+| Wireless Earbuds Plus |						4 |
+| Hoodie Pro			|						4 |
+| Summer Dress Pro		|						4 |
+| Jacket Premium		|						4 |
 
+---
 
+### Operational Analysis
 
+``` sql
+- Which warehouses handle the highest volume of successfully delivered shipments?
+SELECT
+	w.WarehouseName,
+	COUNT(s.ShipmentID) AS DeliveredShipmentCount
+FROM dbo.Warehouses AS w
+INNER JOIN dbo.Shipments AS s
+ON w.WarehouseID = s.WarehouseID
+WHERE s.ShipmentStatus = 'Delivered'
+GROUP BY 
+	w.WarehouseID,
+	w.WarehouseName
+ORDER BY DeliveredShipmentCount DESC;
+```
 
+| Warehouse Name 			  | Delivered Shipment Count |
+| --------------------------- | -----------------------: |
+| Semarang Regional Warehouse |						 143 |
+| Bandung Distribution Center |						 135 |
+| Yogyakarta Storage Center	  |						 128 |
+| Jakarta Central Warehouse	  |						 126 |
+| Medan Northern Warehouse	  |						 124 |
+| Denpasar Bali Warehouse	  |						 114 |
+| Surabaya Fulfillment Hub	  |						 113 |
+| Makassar Eastern Hub		  |						 109 |
 
+---
 
+## Conclusions
 
+Based on this project:
+- There are 833 total orders and Rp3.79 billions based on successfully delivered orders.
+- Portable SSD Premium is the product that generates the strongest sales performance.
+- Electronics is the category that contributes the most.
+- Andi Amelia is the customer who has the highest-values of total spending.
+- E-Wallet is the payment method that contributes the most.
+- Chef Knife Premium is the product that experiences the highest return activity.
+- Semarang Regional Warehouse is the warehouse that handles the highest volume.
 
-
-
-
-
+---

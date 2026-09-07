@@ -75,7 +75,7 @@ WHERE OrderStatus = 'Delivered';
 ```
 
 | Total Delivered Orders | Total Delivered Sales |
-|------------------------|-----------------------|
+| ---------------------- | --------------------- |
 |                    833 |    Rp3.791.581.844,90 |
 
 ---
@@ -104,8 +104,8 @@ GROUP BY
 ORDER BY TotalSales DESC;
 ```
 
-| Product                   | Total Quantity Sold |     Total Sales |
-| ------------------------- | ------------------: | --------------: |
+| Product                   | Total Quantity Sold | Total Sales     |
+| ------------------------- | ------------------- | --------------- |
 | Portable SSD Premium      |                  22 | Rp83.254.534,00 |
 | LED Monitor Premium       |                  18 | Rp74.881.862,00 |
 | Portable SSD Pro          |                  19 | Rp72.930.882,00 |
@@ -145,18 +145,18 @@ GROUP BY
 ORDER BY TotalSales DESC;
 ```
 
-| Category               | Total Quantity Sold |        Total Sales |
-| ---------------------- | ------------------: | -----------------: |
-| Electronics            |                 586 | Rp1,253,653,921.45 |
-| Sports & Outdoors      |                 628 |   Rp489,537,500.01 |
-| Home & Kitchen         |                 550 |   Rp463,722,450.83 |
-| Automotive             |                 617 |   Rp382,049,470.61 |
-| Clothing               |                 675 |   Rp293,610,539.31 |
-| Toys & Games           |                 595 |   Rp257,213,980.34 |
-| Pet Supplies           |                 579 |   Rp236,659,705.72 |
-| Beauty & Personal Care |                 674 |   Rp207,058,352.87 |
-| Books & Stationery     |                 670 |   Rp118,076,436.28 |
-| Groceries              |                 672 |    Rp89,999,487.38 |
+| Category               | Total Quantity Sold | Total Sales        |
+| ---------------------- | ------------------- | ------------------ |
+| Electronics            |                 586 | Rp1.253.653.921,00 |
+| Sports & Outdoors      |                 628 |   Rp489.537.500,00 |
+| Home & Kitchen         |                 550 |   Rp463.722.450,00 |
+| Automotive             |                 617 |   Rp382.049.470,00 |
+| Clothing               |                 675 |   Rp293.610.539,00 |
+| Toys & Games           |                 595 |   Rp257.213.980,00 |
+| Pet Supplies           |                 579 |   Rp236.659.705,00 |
+| Beauty & Personal Care |                 674 |   Rp207.058.352,00 |
+| Books & Stationery     |                 670 |   Rp118.076.436,00 |
+| Groceries              |                 672 |    Rp89.999.487,00 |
 
 ---
 

@@ -26,3 +26,20 @@ but on this page we're going to focus on how to analyze data using SQL.
 5. [Conclusions](#conclusions)
 
 ---
+
+## Project Overview
+
+This project analyzes transactional data from a NovaMart, a fictional e-commerce company.
+And, this project focuses on using Microsoft SQL Server to explore data.
+The goal is to transform raw transactional data into meaningful business insights.
+
+## Business Problem
+
+NovaMart stores large amounts of transactional data accross many fields.
+However, raw transactional records alone do not provide clear information about business performance.
+The company needs an analytical view of its data to find what's happening behind the data itself.
+
+## Dataset Overview
+
+
+

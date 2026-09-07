@@ -46,7 +46,7 @@ The company needs an analytical view of its data to find what's happening behind
 ## Dataset Overview
 
 | Table      | Purpose                                   |
-|------------|-------------------------------------------|
+| ---------- | ----------------------------------------- |
 | Customers  | Customer information                      |
 | Orders     | Customer orders and transaction values    |
 | OrderItems | Products and quantities within each order |
@@ -75,7 +75,7 @@ WHERE OrderStatus = 'Delivered';
 ```
 
 | Total Delivered Orders | Total Delivered Sales |
-| ---------------------- | --------------------- |
+| ---------------------: | --------------------: |
 |                    833 |    Rp3.791.581.844,90 |
 
 ---
@@ -105,7 +105,7 @@ ORDER BY TotalSales DESC;
 ```
 
 | Product Name              | Total Quantity Sold | Total Sales     |
-| ------------------------- | ------------------- | --------------- |
+| ------------------------- | ------------------: | --------------: |
 | Portable SSD Premium      |                  22 | Rp83.254.534,00 |
 | LED Monitor Premium       |                  18 | Rp74.881.862,00 |
 | Portable SSD Pro          |                  19 | Rp72.930.882,00 |
@@ -146,7 +146,7 @@ ORDER BY TotalSales DESC;
 ```
 
 | Category Name          | Total Quantity Sold | Total Sales        |
-| ---------------------- | ------------------- | ------------------ |
+| ---------------------- | ------------------: | -----------------: |
 | Electronics            |                 586 | Rp1.253.653.921,00 |
 | Sports & Outdoors      |                 628 |   Rp489.537.500,00 |
 | Home & Kitchen         |                 550 |   Rp463.722.450,00 |
@@ -179,7 +179,7 @@ ORDER BY TotalDeliveredSales DESC;
 ```
 
 | Customer Name    | Delivered Order Count | Total Delivered Sales |
-| ---------------- | --------------------- | --------------------- |
+| ---------------- | --------------------: | --------------------: |
 | Andi Amelia	   |                     5 |	     36.713.490,00 |
 | Aulia Firmansyah |	                 6 |		 32.568.472,00 |
 | Aulia Gunawan	   |                     4 |		 32.297.049,00 |

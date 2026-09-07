@@ -82,7 +82,42 @@ WHERE OrderStatus = 'Delivered';
 
 ### Product Performance
 
+``` sql
+-- Which products generate the strongest sales performance among successfully delivered orders?
+SELECT TOP 10
+	p.ProductName,
+	SUM(oi.Quantity) AS TotalQuantitySold,
+	SUM(
+		oi.Quantity
+		* oi.UnitPrice
+		* (1 - oi.DiscountPercent / 100.0)
+	) AS TotalSales
+FROM dbo.Products AS p
+INNER JOIN dbo.OrderItems AS oi
+ON p.ProductID = oi.ProductID
+INNER JOIN dbo.Orders AS o
+ON oi.OrderID = o.OrderID
+WHERE o.OrderStatus = 'Delivered'
+GROUP BY
+	p.ProductID,
+	p.ProductName
+ORDER BY TotalSales DESC;
+```
 
+| Product                   | Units Sold |     Total Sales |
+| ------------------------- | ---------: | --------------: |
+| Portable SSD Premium      |         22 | Rp83.254.534,00 |
+| LED Monitor Premium       |         18 | Rp74.881.862,00 |
+| Portable SSD Pro          |         19 | Rp72.930.882,00 |
+| LED Monitor Plus          |         16 | Rp64.912.500,00 |
+| Wireless Mouse Plus       |         22 | Rp61.334.558,00 |
+| LED Monitor Pro           |         12 | Rp48.777.083,00 |
+| LED Monitor Basic         |         13 | Rp46.613.848,00 |
+| Portable SSD Basic        |         13 | Rp45.526.960,00 |
+| Mechanical Keyboard Basic |         18 | Rp40.394.975,00 |
+| Webcam Standard           |         12 | Rp38.928.431,00 |
+
+---
 
 
 

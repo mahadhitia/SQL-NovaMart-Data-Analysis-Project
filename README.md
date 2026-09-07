@@ -10,3 +10,19 @@ but on this page we're going to focus on how to analyze data using SQL.
 
 ---
 
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Business Problem](#business-problem)
+3. [Dataset Overview](#dataset-overview)
+4. [Key Business Analysis](#key-business-analysis)
+   - [Sales Performance](#sales-performance)
+   - [Product Performance](#product-performance)
+   - [Category Performance](#category-performance)
+   - [Customer Analysis](#customer-analysis)
+   - [Payment Analysis](#payment-analysis)
+   - [Returns Analysis](#return-analysis)
+   - [Operational Analysis](#operational-analysis)
+5. [Conclusions](#conclusions)
+
+---

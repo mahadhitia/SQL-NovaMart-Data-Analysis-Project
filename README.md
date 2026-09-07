@@ -124,24 +124,24 @@ ORDER BY TotalSales DESC;
 ``` sql
 -- Which product categories contribute the most to successfully delivered sales?
 SELECT
-	c.CategoryName,
+	ca.CategoryName,
 	SUM(oi.Quantity) AS TotalQuantitySold,
 	SUM(
 		oi.Quantity
 		* oi.UnitPrice
 		* (1 - oi.DiscountPercent / 100)
 	) AS TotalSales
-FROM dbo.Categories AS c
+FROM dbo.Categories AS ca
 INNER JOIN dbo.Products AS p
-	ON c.CategoryID = p.CategoryID
+	ON ca.CategoryID = p.CategoryID
 INNER JOIN dbo.OrderItems AS oi
 	ON p.ProductID = oi.ProductID
 INNER JOIN dbo.Orders AS o
 	ON oi.OrderID = o.OrderID
 WHERE o.OrderStatus = 'Delivered'
 GROUP BY
-	c.CategoryID,
-	c.CategoryName
+	ca.CategoryID,
+	ca.CategoryName
 ORDER BY TotalSales DESC;
 ```
 
@@ -160,6 +160,38 @@ ORDER BY TotalSales DESC;
 
 ---
 
+### Customer Analysis
+
+``` sql
+-- Who are NovaMart's highest-value customers based on successfully delivered orders?
+SELECT TOP 10
+	c.CustomerName,
+	COUNT(o.OrderID) AS DeliveredOrderCount,
+	SUM(o.TotalAmount) AS TotalDeliveredSales
+FROM Customers AS c
+INNER JOIN Orders AS o
+ON c.CustomerID = o.CustomerID
+WHERE o.OrderStatus = 'Delivered'
+GROUP BY
+	c.CustomerID,
+	c.CustomerName
+ORDER BY TotalDeliveredSales DESC;
+```
+
+| Customer Name    | Delivered Order Count | Total Delivered Sales |
+| ---------------- | --------------------- | --------------------- |
+| Andi Amelia	   |                     5 |	     36.713.490,00 |
+| Aulia Firmansyah |	                 6 |		 32.568.472,00 |
+| Aulia Gunawan	   |                     4 |		 32.297.049,00 |
+| Raka Utami	   |                     3 |		 30.573.068,00 |
+| Kevin Lestari	   |                     3 |		 29.599.061,00 |
+| Putri Pratama	   |                     2 |		 28.516.343,00 |
+| Aditya Wibowo	   |                     2 |		 28.096.421,00 |
+| Alya Kurniawan   |                   	 3 |		 26.621.522,00 |
+| Alya Firmansyah  |	                 5 |		 26.223.186,00 |
+| Ilham Saputra	   |                     3 |		 26.062.585,00 |
+
+---
 
 
 

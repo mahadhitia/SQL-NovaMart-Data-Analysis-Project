@@ -76,7 +76,7 @@ WHERE OrderStatus = 'Delivered';
 
 | Total Delivered Orders | Total Delivered Sales |
 |------------------------|-----------------------|
-| 833                    | Rp3.791.581.844,90    |
+|                    833 |    Rp3.791.581.844,90 |
 
 ---
 
@@ -94,9 +94,9 @@ SELECT TOP 10
 	) AS TotalSales
 FROM dbo.Products AS p
 INNER JOIN dbo.OrderItems AS oi
-ON p.ProductID = oi.ProductID
+	ON p.ProductID = oi.ProductID
 INNER JOIN dbo.Orders AS o
-ON oi.OrderID = o.OrderID
+	ON oi.OrderID = o.OrderID
 WHERE o.OrderStatus = 'Delivered'
 GROUP BY
 	p.ProductID,
@@ -104,20 +104,71 @@ GROUP BY
 ORDER BY TotalSales DESC;
 ```
 
-| Product                   | Units Sold |     Total Sales |
-| ------------------------- | ---------: | --------------: |
-| Portable SSD Premium      |         22 | Rp83.254.534,00 |
-| LED Monitor Premium       |         18 | Rp74.881.862,00 |
-| Portable SSD Pro          |         19 | Rp72.930.882,00 |
-| LED Monitor Plus          |         16 | Rp64.912.500,00 |
-| Wireless Mouse Plus       |         22 | Rp61.334.558,00 |
-| LED Monitor Pro           |         12 | Rp48.777.083,00 |
-| LED Monitor Basic         |         13 | Rp46.613.848,00 |
-| Portable SSD Basic        |         13 | Rp45.526.960,00 |
-| Mechanical Keyboard Basic |         18 | Rp40.394.975,00 |
-| Webcam Standard           |         12 | Rp38.928.431,00 |
+| Product                   | Total Quantity Sold |     Total Sales |
+| ------------------------- | ------------------: | --------------: |
+| Portable SSD Premium      |                  22 | Rp83.254.534,00 |
+| LED Monitor Premium       |                  18 | Rp74.881.862,00 |
+| Portable SSD Pro          |                  19 | Rp72.930.882,00 |
+| LED Monitor Plus          |                  16 | Rp64.912.500,00 |
+| Wireless Mouse Plus       |                  22 | Rp61.334.558,00 |
+| LED Monitor Pro           |                  12 | Rp48.777.083,00 |
+| LED Monitor Basic         |                  13 | Rp46.613.848,00 |
+| Portable SSD Basic        |                  13 | Rp45.526.960,00 |
+| Mechanical Keyboard Basic |                  18 | Rp40.394.975,00 |
+| Webcam Standard           |                  12 | Rp38.928.431,00 |
 
 ---
+
+### Category Performance
+
+``` sql
+-- Which product categories contribute the most to successfully delivered sales?
+SELECT
+	c.CategoryName,
+	SUM(oi.Quantity) AS TotalQuantitySold,
+	SUM(
+		oi.Quantity
+		* oi.UnitPrice
+		* (1 - oi.DiscountPercent / 100)
+	) AS TotalSales
+FROM dbo.Categories AS c
+INNER JOIN dbo.Products AS p
+	ON c.CategoryID = p.CategoryID
+INNER JOIN dbo.OrderItems AS oi
+	ON p.ProductID = oi.ProductID
+INNER JOIN dbo.Orders AS o
+	ON oi.OrderID = o.OrderID
+WHERE o.OrderStatus = 'Delivered'
+GROUP BY
+	c.CategoryID,
+	c.CategoryName
+ORDER BY TotalSales DESC;
+```
+
+| Category               | Total Quantity Sold |        Total Sales |
+| ---------------------- | ------------------: | -----------------: |
+| Electronics            |                 586 | Rp1,253,653,921.45 |
+| Sports & Outdoors      |                 628 |   Rp489,537,500.01 |
+| Home & Kitchen         |                 550 |   Rp463,722,450.83 |
+| Automotive             |                 617 |   Rp382,049,470.61 |
+| Clothing               |                 675 |   Rp293,610,539.31 |
+| Toys & Games           |                 595 |   Rp257,213,980.34 |
+| Pet Supplies           |                 579 |   Rp236,659,705.72 |
+| Beauty & Personal Care |                 674 |   Rp207,058,352.87 |
+| Books & Stationery     |                 670 |   Rp118,076,436.28 |
+| Groceries              |                 672 |    Rp89,999,487.38 |
+
+---
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -33,13 +33,31 @@ This project analyzes transactional data from a NovaMart, a fictional e-commerce
 And, this project focuses on using Microsoft SQL Server to explore data.
 The goal is to transform raw transactional data into meaningful business insights.
 
+---
+
 ## Business Problem
 
 NovaMart stores large amounts of transactional data accross many fields.
 However, raw transactional records alone do not provide clear information about business performance.
 The company needs an analytical view of its data to find what's happening behind the data itself.
 
+---
+
 ## Dataset Overview
 
+| Table      | Purpose                                   |
+|------------|-------------------------------------------|
+| Customers  | Customer information                      |
+| Orders     | Customer orders and transaction values    |
+| OrderItems | Products and quantities within each order |
+| Products   | Product information and prices            |
+| Categories | Product categories                        |
+| Payments   | Payment transactions and statues          |
+| Returns    | Product return records                    |
+| Shipments  | Order shipment information                |
+| Suppliers  | Product supplier information              |
+| Inventory  | Product stock by warehouse                |
+| Warehouses | Warehouse information                     |
 
+---
 

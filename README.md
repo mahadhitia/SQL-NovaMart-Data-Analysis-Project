@@ -180,16 +180,16 @@ ORDER BY TotalDeliveredSales DESC;
 
 | Customer Name    | Delivered Order Count | Total Delivered Sales |
 | ---------------- | --------------------: | --------------------: |
-| Andi Amelia	   |                     5 |	     36.713.490,00 |
-| Aulia Firmansyah |	                 6 |		 32.568.472,00 |
-| Aulia Gunawan	   |                     4 |		 32.297.049,00 |
-| Raka Utami	   |                     3 |		 30.573.068,00 |
-| Kevin Lestari	   |                     3 |		 29.599.061,00 |
-| Putri Pratama	   |                     2 |		 28.516.343,00 |
-| Aditya Wibowo	   |                     2 |		 28.096.421,00 |
-| Alya Kurniawan   |                   	 3 |		 26.621.522,00 |
-| Alya Firmansyah  |	                 5 |		 26.223.186,00 |
-| Ilham Saputra	   |                     3 |		 26.062.585,00 |
+| Andi Amelia	   |                     5 |	   Rp36.713.490,00 |
+| Aulia Firmansyah |	                 6 |	   Rp32.568.472,00 |
+| Aulia Gunawan	   |                     4 |	   Rp32.297.049,00 |
+| Raka Utami	   |                     3 |	   Rp30.573.068,00 |
+| Kevin Lestari	   |                     3 |	   Rp29.599.061,00 |
+| Putri Pratama	   |                     2 |	   Rp28.516.343,00 |
+| Aditya Wibowo	   |                     2 |	   Rp28.096.421,00 |
+| Alya Kurniawan   |                   	 3 |	   Rp26.621.522,00 |
+| Alya Firmansyah  |	                 5 |	   Rp26.223.186,00 |
+| Ilham Saputra	   |                     3 |	   Rp26.062.585,00 |
 
 ---
 

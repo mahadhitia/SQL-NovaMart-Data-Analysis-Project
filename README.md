@@ -61,3 +61,32 @@ The company needs an analytical view of its data to find what's happening behind
 
 ---
 
+## Key Business Analysis
+
+### Sales Performance
+
+``` sql
+-- What is the overall sales performance of successfully delivered orders?
+SELECT
+	COUNT(OrderID) AS TotalDeliveredOrders,
+	SUM(TotalAmount) AS TotalDeliveredSales
+FROM dbo.Orders
+WHERE OrderStatus = 'Delivered';
+```
+
+| Total Delivered Orders | Total Delivered Sales |
+|------------------------|-----------------------|
+| 833                    | Rp3.791.581.844,90    |
+
+---
+
+### Product Performance
+
+
+
+
+
+
+
+
+

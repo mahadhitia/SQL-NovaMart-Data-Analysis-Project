@@ -193,6 +193,27 @@ ORDER BY TotalDeliveredSales DESC;
 
 ---
 
+### Payment Analysis
+
+``` sql
+-- Which payment methods contribute the most to successfully completed payment value?
+SELECT
+	PaymentMethod,
+	COUNT(PaymentID) AS CompletedPaymentCount,
+	SUM(Amount) AS TotalCompletedPaymentValue
+FROM dbo.Payments
+WHERE PaymentStatus = 'Completed'
+GROUP BY PaymentMethod
+ORDER BY TotalCompletedPaymentValue DESC;
+```
+
+| Payment Method | Completed Payment Count | Total Completed Payment Value |
+| -------------- | ----------------------: | ----------------------------: |
+| E-Wallet		 | 					   474 |		    Rp2.359.100.715,00 |
+| Cash			 |					   484 |			Rp2.347.897.457,00 |
+| Credit Card	 |					   478 |			Rp2.209.350.964,00 |
+| Bank Transfer	 |					   486 |			Rp2.197.920.937,00 |
+
 
 
 

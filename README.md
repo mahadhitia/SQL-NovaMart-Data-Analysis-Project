@@ -104,7 +104,7 @@ GROUP BY
 ORDER BY TotalSales DESC;
 ```
 
-| Product                   | Total Quantity Sold | Total Sales     |
+| Product Name              | Total Quantity Sold | Total Sales     |
 | ------------------------- | ------------------- | --------------- |
 | Portable SSD Premium      |                  22 | Rp83.254.534,00 |
 | LED Monitor Premium       |                  18 | Rp74.881.862,00 |
@@ -145,7 +145,7 @@ GROUP BY
 ORDER BY TotalSales DESC;
 ```
 
-| Category               | Total Quantity Sold | Total Sales        |
+| Category Name          | Total Quantity Sold | Total Sales        |
 | ---------------------- | ------------------- | ------------------ |
 | Electronics            |                 586 | Rp1.253.653.921,00 |
 | Sports & Outdoors      |                 628 |   Rp489.537.500,00 |
